@@ -1,0 +1,1241 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: rgb(14, 18, 37);
+	overflow-y: scroll;
+	font-family: 'Montserrat', sans-serif;
+	min-width: 50%;
+}
+
+/* MAN HINH LOG IN --------------------- --------------------- --------------------- --------------------- --------------------- --------------------- --------------------- --------------------- --------------------- --------------------- --------------------- */
+
+.upper-container{
+	display: flex;
+	align-items: center;
+	justify-items: center;
+	gap: 2%;
+	margin: auto;
+}
+
+.logo-and-pic{
+	display: block;
+	margin-right: 50px;
+}
+
+#corner-logo{
+	width: 160px;
+	margin-bottom: 5px;
+	margin-left: 30px;
+	user-select: none;
+	-webkit-user-select: none;
+	cursor: pointer;
+}
+
+.logo-text{
+	margin-bottom: 25px;
+	margin-left: 30px;
+	color: rgba(211, 211, 211, 0.815);
+	font-size: 13px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+#left-img{
+	display: block;
+	width: 400px;
+	margin-top: 60px;
+}
+.signin-container{
+	margin: 25px;
+}
+.signin-container form{
+	min-width: 450px;
+	background-color: #F1F2F5;
+	border-radius: 15px;
+	padding: 50px 50px;
+}
+
+
+.signin-heading{
+	margin-bottom: 30px;
+	font-weight: 600;
+	text-align: center;
+	-webkit-user-select: none;
+	cursor: default;
+}
+
+.signin-label{
+	font-size: 14px;
+	display: block;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.signin-input{
+ 	display: block;
+	width: 100%;
+	padding: 17px 15px;
+	border-radius: 10px;
+	border: 1px solid rgb(204, 203, 203);
+	background-color: #f5f5f5;
+	/* box-shadow: 2px 2px 4px rgb(0,0,0,.4); */
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+
+.input-password-icon i{
+	position: absolute;
+	right: 5px;
+	margin-top: 6px;
+	min-width:30px;
+
+}
+
+.input-password-icon{
+	width: 100%;
+	position: relative;
+}
+
+.fa-eye-slash {
+	padding: 13px;
+	background-color: #f5f5f5;
+	border-radius: 8px;
+	color: rgb(99, 99, 99);
+	z-index: 3;
+}
+
+.fa-eye{
+	padding: 13px;
+	background-color: #f5f5f5;
+	border-radius: 8px;
+	color: rgb(99, 99, 99);
+	z-index: 2;
+}
+
+::placeholder{
+	opacity: 50%;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.signin-btn{
+	display: block;
+	margin: 30px auto;
+	width: 100%;
+	padding: 17px 20px;
+	text-align: center;
+	border-radius: 10px;
+	border: none;
+	background-color: #512da8;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+
+}
+
+.signin-btn:hover{
+	background-color: #6235cb;
+}
+
+
+.signin-link-or{
+	text-align: center;
+	width: 100%;
+	position: relative;
+}
+
+.signin-link-or span{
+ 	position: relative;
+	padding: 2px 10px;
+	background-color:#F1F2F5;
+	z-index: 2;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.signin-link-or::after{
+	content: "";
+	width: 100%;
+	height: 1px;
+	background-color: #acacac;
+	position: absolute;
+	top:50%;
+	left: 0;
+}
+
+.social-icon{
+	text-align: center;
+	margin: 20px auto;
+}
+
+.social-icon a span{
+	color:black;
+	font-family: 'Montserrat', sans-serif;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.social-icon a .signin-social-icon{
+	border: 1px solid rgba(204, 204, 204, 0.986);
+	border-radius: 10px;
+	background-color: #f5f5f5;
+}
+
+.social-icon a .signin-social-icon:active{
+	background-color: #e9e9e9;
+}
+
+
+.social-icon a .fa-facebook{
+	padding: 15px 15px;
+	color: #0766FF;
+	margin-right: 5px;
+}
+
+.social-icon a .fa-apple{
+	padding: 15px 30px;
+	color: black;
+	margin-left: 5px;
+}
+
+.signup{
+	margin-top: 30px;
+	text-align: center;
+	font-size: 14px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+
+.signup a{
+	color: #512da8;
+	text-decoration: none;
+}
+
+
+.forgot-password{
+	font-size: 14px;
+	margin-top: 10px;
+	text-align: center;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.forgot-password a{
+	color: #512da8;
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+.footer {
+	width: 100%;
+	height: 12vh;
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 30px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+
+.footer-option-container{
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap:20px;
+	margin-bottom: 0;
+
+}
+
+.footer-option-container a{
+	text-decoration: none;
+	color: #FFF;
+	font-size: 15px;
+	opacity: 60%;
+	text-align: center;
+}
+
+.footer-long-line{
+	text-align: center;
+	width: 80%;
+	position: relative;
+	margin: 10px auto;
+}
+.footer-long-line:after{
+	content: "";
+	width: 100%;
+	background-color: rgba(241, 242, 245, 0.233);
+	height: 1px;
+	z-index: 2;
+	position: absolute;
+	left:0;
+	top:0
+}
+
+
+.footer p{
+	color: #FFF;
+	padding:0;
+	margin:0;
+	font-size: 15px;
+	opacity: 60%;
+	text-align: center;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+
+/* danh cho mobile */
+@media only screen and (max-width: 740px ){
+
+	body{
+		overflow:scroll;
+		height:100svh;
+	}
+
+	#corner-logo{
+		width: 150px;
+		margin-bottom: 0;
+		margin-left: 30px;
+	}
+
+	.logo-text{
+		display: none;
+	}
+
+	.signin-heading{
+		margin-bottom: 20px;
+		font-weight: 600;
+		text-align: center;
+		font-size: 25px;
+	}
+
+	.signin-container form{
+		min-width: 330px;
+		padding: 25px 30px;
+	}
+
+	.signin-input{
+		display: block;
+	   width: 100%;
+	   padding: 12px 12px;
+	   border-radius: 10px;
+	   border: 1px solid rgba(204, 204, 204, 0.986);
+	   background-color: #f5f5f5;
+	   /* box-shadow: 2px 2px 4px rgb(0,0,0,.4); */
+	   margin-bottom: 10px;
+	   font-size: 14px;
+    }
+
+	.input-password-icon i{
+		position: absolute;
+		right: 4px;
+		margin-top: 7px;
+		min-width:20px;
+
+	}
+
+	.fa-eye-slash {
+		padding: 8px;
+		background-color: #f5f5f5;
+		border-radius: 8px;
+		color: rgb(99, 99, 99);
+		z-index: 3;
+	}
+
+	.fa-eye{
+		padding: 8px;
+		background-color: #f5f5f5;
+		border-radius: 8px;
+		color: rgb(99, 99, 99);
+		z-index: 2;
+	}
+
+
+	.signin-link-or span{
+		position: relative;
+	   padding: 2px 10px;
+	   background-color:#F1F2F5;
+	   z-index: 2;
+	   font-size: 12px;
+   }
+
+	.signin-btn{
+		margin: 15px auto;
+		padding: 15px 20px;
+		width: 100%;
+		font-size: 14px;
+		margin-top: 30px;
+	}
+
+	.social-icon{
+		text-align: center;
+		margin: 10px auto;
+	}
+
+
+	.social-icon a span{
+		font-size: 12px;
+	}
+
+
+	.social-icon a .fa-facebook{
+		padding: 10px 10px;
+		margin-right: 3px;
+	}
+
+	.social-icon a .fa-apple{
+		padding: 10px 25px;
+		margin-left: 3px;
+	}
+
+	#left-img{
+		display: none;
+	}
+
+	#corner-img{
+		width: 170px;
+	}
+
+	#corner-img{
+		width: 170px;
+	}
+
+	.signup{
+		margin-top: 15px;
+		text-align: center;
+		font-size: 14px;
+	}
+
+	.forgot-password{
+		font-size: 12px;
+		margin-top: 8px;
+	}
+
+	.upper-container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		margin-top: 50px;
+	}
+
+	.footer {
+		padding:0;
+		height: 10vh;
+		padding: 0px 30px;
+	}
+	.footer p{
+		color: #FFF;
+		font-size: 12px;
+		opacity: 60%;
+		/* padding: 20px 30px; */
+		text-align: center;
+	}
+	.footer-option-container a{
+		text-decoration: none;
+		color: #FFF;
+		font-size: 13px;
+		opacity: 60%;
+		text-align: center;
+	}
+
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* danh cho GALAXY FOLD */
+@media only screen and (max-width: 290px ){
+
+	body{
+		overflow:scroll;
+		height:100svh;
+	}
+
+	#corner-logo{
+		width: 90px;
+		margin-bottom: 0;
+		margin-left: 50px;
+	}
+
+	.logo-text{
+		display: none;
+	}
+
+	.signin-heading{
+		margin-bottom: 20px;
+		font-weight: 600;
+		text-align: center;
+		font-size: 20px;
+	}
+
+	.signin-container form{
+		min-width: 230px;
+		padding: 25px 20px;
+	}
+
+	.signin-label{
+		font-size: 12px;
+	}
+
+	.signin-input{
+		display: block;
+	   width: 100%;
+	   padding: 7px 15px;
+	   border-radius: 5px;
+	   border: 1px solid rgba(204, 204, 204, 0.518);
+	   background-color: #f5f5f5;
+	   /* box-shadow: 2px 2px 4px rgb(0,0,0,.4); */
+	   margin-bottom: 10px;
+	   font-size: 14px;
+    }
+
+	::placeholder{
+		font-size: 11px;
+	}
+
+	.input-password-icon i{
+		position: absolute;
+		right: 4px;
+		margin-top: 5px;
+		min-width:15px;
+
+	}
+
+	.fa-eye-slash {
+		padding: 4px;
+		background-color: #f5f5f5;
+		border-radius: 8px;
+		color: rgb(99, 99, 99);
+		z-index: 3;
+	}
+
+	.fa-eye{
+		padding: 4px;
+		background-color: #f5f5f5;
+		border-radius: 8px;
+		color: rgb(99, 99, 99);
+		z-index: 2;
+	}
+
+	.signin-btn{
+		border-radius: 5px;
+		margin: 15px auto;
+		padding: 10px 8px;
+		width: 100%;
+		font-size: 12px;
+		margin-top: 30px;
+	}
+
+
+	.signin-link-or span{
+		position: relative;
+	   padding: 2px 10px;
+	   background-color:#F1F2F5;
+	   z-index: 2;
+	   font-size: 12px;
+   }
+
+
+
+	.social-icon{
+		text-align: center;
+		margin: 10px auto;
+	}
+
+	.social-icon a span{
+		font-size: 10px;
+	}
+
+
+	.social-icon a .fa-facebook{
+		padding: 8px 9px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+	.social-icon a .fa-apple{
+		padding: 8px 20px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+	}
+
+	#left-img{
+		display: none;
+	}
+
+	#corner-img{
+		width: 170px;
+	}
+
+	#corner-img{
+		width: 170px;
+	}
+
+	.signup{
+		margin-top: 15px;
+		text-align: center;
+		font-size: 12px;
+	}
+
+	.forgot-password{
+		font-size: 12px;
+		margin-top: 8px;
+	}
+
+	.upper-container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0;
+		margin-top: 10px;
+	}
+
+	.footer {
+		padding:0;
+		height: 10vh;
+		padding: 0px 30px;
+	}
+	.footer p{
+		color: #FFF;
+		font-size: 12px;
+		opacity: 60%;
+		/* padding: 20px 30px; */
+		text-align: center;
+	}
+	.footer-option-container a{
+		text-decoration: none;
+		color: #FFF;
+		font-size: 13px;
+		opacity: 60%;
+		text-align: center;
+	}
+
+}
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------- */
+
+/* danh cho tablet va PC */
+@media only screen and (min-width: 740px) and (max-width: 1024px){
+
+	body{
+		overflow: scroll;
+		height: 100svh;
+	}
+
+	#left-img{
+		display: none;
+	}
+
+	#corner-img{
+		width: 170px;
+	}
+
+	#corner-img{
+		width: 170px;
+	}
+
+	.logo-text{
+		display: none;
+	}
+
+	.upper-container{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.signin-container form{
+		min-width: 450px;
+		padding: 25px 50px;
+	}
+
+	.footer {
+		width: 100%;
+		height: 9vh;
+		margin-top: 0px;
+
+	}
+}
+
+
+
+/* MAN HINH SIGN UP ----------------------------------------------------------------------------------------------------------------------------------------- */
+.signup-heading{
+	margin-bottom: 30px;
+	font-weight: 600;
+	text-align: center;
+	user-select: none;
+	-webkit-user-select: none;
+}
+.signup-container{
+	min-width: 450px;
+	background-color: #F1F2F5;
+	border-radius: 15px;
+	padding: 50px 50px;
+}
+
+.signup-container form .link-container{
+	width: 100%;
+	border: 1px solid rgba(204, 204, 204, 0.986);
+	background-color: #f5f5f5;
+	padding:17px 15px;
+	margin:15px 0;
+	text-align: left;
+	border-radius: 10px;
+	cursor:pointer;
+}
+
+.signup-container form .link-container i{
+	margin-left: 25px;
+}
+
+.signup-container form a:active>.link-container{
+	background-color: #e9e9e9;
+}
+
+
+.signup-container form a{
+	text-decoration: none;
+}
+
+.signup-container form .link-container span{
+	color:black;
+	margin-left: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+
+.fa-google {
+	background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
+.signup-container form .link-container .fa-apple{
+	color: black;
+	font-size: 21px;
+}
+
+.signup-container form .link-container .fa-facebook{
+	color: #0766FF;
+	font-size: 20px;
+}
+
+.signup-container form .link-container .fa-envelope{
+	color: gray;
+	font-size: 18px;
+}
+.signup-container form .thin-line{
+	position: relative;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.signup-container form #thin-line{
+	padding: 0 5px;
+	position: relative;
+	background-color:#F1F2F5 ;
+}
+
+.signup-container form .thin-line::after{
+	content:"";
+	background-color: #acacac;
+	height: 1px;
+	width: 100%;
+	position: absolute;
+	top:50%;
+	left:0
+}
+
+.signup-container form .have-account{
+	margin-top: 30px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.signup-container form .signup-login-btn{
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+	width: 100%;
+	padding: 20px 20px;
+	text-align: center;
+	border-radius: 10px;
+	border: none;
+	background-color: #512da8;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.signup-container form .signup-login-btn:hover{
+	background-color: #6235cb;
+}
+
+
+/* danh cho mobile */
+@media only screen and (max-width: 740px ){
+	#corner-logo{
+		width: 120px;
+		margin-bottom: 30px;
+		margin-left: 30px;
+	}
+
+	.signup-container{
+		min-width: 330px;
+		background-color: #F1F2F5;
+		border-radius: 15px;
+		padding: 40px 40px;
+	}
+
+	.signup-container form .link-container{
+		width: 100%;
+		border: 1px solid rgba(204, 204, 204, 0.986);
+		background-color: #f5f5f5;
+		padding:12px 12px;
+		margin:15px 0;
+		text-align: left;
+		border-radius: 10px;
+		cursor:pointer;
+	}
+
+
+	.signup-container form .link-container span{
+		color:black;
+		margin-left: 10px;
+		font-size: 14px;
+	}
+
+	.signup-container form .have-account{
+		margin-top: 30px;
+		font-size: 14px;
+	}
+
+
+	.signup-container form .signup-login-btn{
+		display: block;
+		margin: 0 auto;
+		margin-top: 10px;
+		width: 100%;
+		padding: 15px 15px;
+		text-align: center;
+		border-radius: 10px;
+		border: none;
+		background-color: #512da8;
+		color: white;
+		font-size: 16px;
+		cursor: pointer;
+	}
+}
+
+
+/* danh cho tablet va PC */
+@media only screen and (min-width: 740px) and (max-width: 1024px){
+	#corner-logo{
+		width: 150px;
+		margin-bottom: 30px;
+		margin-left: 30px;
+	}
+
+	.signup-container{
+		min-width: 450px;
+		background-color: #F1F2F5;
+		border-radius: 15px;
+		padding: 50px 50px;
+	}
+	.signup-container form .link-container{
+		width: 100%;
+		border: 1px solid rgba(204, 204, 204, 0.986);
+		background-color: #f5f5f5;
+		padding:17px 15px;
+		margin:15px 0;
+		text-align: left;
+		border-radius: 10px;
+		cursor:pointer;
+	}
+
+	.signup-container form .link-container span{
+		color:black;
+		margin-left: 10px;
+		font-size: 14px;
+	}
+
+	.signup-container form .have-account{
+		margin-top: 30px;
+		font-size: 14px;
+	}
+
+
+	.signup-container form .signup-login-btn{
+		display: block;
+		margin: 0 auto;
+		margin-top: 10px;
+		width: 100%;
+		padding: 20px 20px;
+		text-align: center;
+		border-radius: 10px;
+		border: none;
+		background-color: #512da8;
+		color: white;
+		font-size: 16px;
+		cursor: pointer;
+	}
+}
+
+/* MAN HINH SIGN UP BANG MAIL ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+.signup-mail-container{
+	min-width: 450px;
+	background-color: #F1F2F5;
+	border-radius: 15px;
+	padding: 50px 50px;
+}
+
+
+.signup-mail-heading{
+	margin-bottom: 30px;
+	font-weight: 600;
+	text-align: center;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.signup-mail-input{
+	display: block;
+	width: 100%;
+	padding: 15px 15px;
+	border-radius: 10px;
+	border: 1px solid rgb(204, 203, 203);
+	background-color: #f5f5f5;
+	/* box-shadow: 2px 2px 4px rgb(0,0,0,.4); */
+	margin-bottom: 20px;
+	font-size: 14px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.signup-mail-label{
+	display: block;
+	font-size: 14px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.signup-mail-btn{
+	display: block;
+	margin:50px auto;
+	width: 100%;
+	padding: 17px 20px;
+	text-align: center;
+	border-radius: 10px;
+	border: none;
+	background-color: #512da8;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.signup-mail-btn:hover{
+	background-color: #6235cb;
+}
+
+.term-accept-error{
+	color: red;
+	font-size: 12px;
+	margin-bottom: 10px;
+	display:none;
+}
+
+.term-signup-mail-accept{
+	font-size: 14px;
+	display: inline-block;
+	margin-left: 3px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.term-signup-mail-accept a{
+	text-decoration: none;
+	color: #512da8;
+}
+
+.term-signup-mail-accept a:active{
+	color: black ;
+}
+
+/* danh cho tablet va PC */
+@media only screen and (min-width: 740px) and (max-width: 1024px){
+	#corner-logo{
+		width: 150px;
+		margin-bottom: 30px;
+		margin-left: 30px;
+	}
+
+	.signup-mail-container{
+		min-width: 450px;
+		background-color: #F1F2F5;
+		border-radius: 15px;
+		padding: 50px 50px;
+	}
+}
+
+
+/* danh cho mobile */
+@media only screen and (max-width: 740px ){
+	#corner-logo{
+		width: 120px;
+		margin-bottom: 30px;
+		margin-left: 30px;
+	}
+
+	.signup-mail-container{
+		min-width: 330px;
+		background-color: #F1F2F5;
+		border-radius: 15px;
+		padding: 25px 30px;
+	}
+
+	.signup-mail-heading{
+		margin-bottom: 20px;
+		font-weight: 600;
+		text-align: center;
+		font-size: 23px;
+	}
+
+	.signup-mail-input{
+		display: block;
+		width: 100%;
+		padding: 12px 12px;
+		border-radius: 10px;
+		border: 1px solid rgb(204, 203, 203);
+		background-color: #f5f5f5;
+		margin-bottom: 20px;
+		font-size: 14px;
+	}
+
+	.signup-mail-btn{
+		display: block;
+		margin:25px auto;
+		width: 100%;
+		padding: 15px 20px;
+		text-align: center;
+		border-radius: 10px;
+		border: none;
+		background-color: #512da8;
+		color: white;
+		font-size: 16px;
+		cursor: pointer;
+	}
+
+	.term-signup-mail-accept{
+		font-size: 12px;
+		display: inline-block;
+		margin-left: 1px;
+	}
+
+}
+
+
+/* MAN HINH FORGOT PASSWORD ----------------------------------------------------------------------------------------------------------------------------------------- */
+
+.forgot-password-container{
+	min-width: 450px;
+	background-color: #F1F2F5;
+	border-radius: 15px;
+	padding: 50px 50px;
+}
+
+
+.forgot-password-heading{
+	margin-bottom: 30px;
+	font-weight: 600;
+	text-align: center;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.forgot-password-user-input{
+	display: block;
+	width: 100%;
+	padding: 15px 15px;
+	border-radius: 10px;
+	border: 1px solid rgb(204, 203, 203);
+	background-color: #f5f5f5;
+	/* box-shadow: 2px 2px 4px rgb(0,0,0,.4); */
+	margin-bottom: 20px;
+	font-size: 14px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.forgot-password-label{
+	display: block;
+	font-size: 14px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.forgot-password-btn{
+	display: block;
+	margin:50px auto;
+	width: 100%;
+	padding: 17px 20px;
+	text-align: center;
+	border-radius: 10px;
+	border: none;
+	background-color: #512da8;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.signup-mail-btn:hover{
+	background-color: #6235cb;
+}
+
+.term-accept-error{
+	color: red;
+	font-size: 12px;
+	margin-bottom: 10px;
+	display:none;
+}
+
+.term-forgot-password-accept{
+	font-size: 14px;
+	display: inline-block;
+	margin-left: 3px;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.term-forgot-password-accept a{
+	text-decoration: none;
+}
+
+.term-forgot-password-accept a:active{
+	color: black ;
+}
+
+/* danh cho tablet va PC */
+@media only screen and (min-width: 740px) and (max-width: 1024px){
+	#corner-logo{
+		width: 150px;
+		margin-bottom: 30px;
+		margin-left: 30px;
+	}
+
+	.signup-mail-container{
+		min-width: 450px;
+		background-color: #F1F2F5;
+		border-radius: 15px;
+		padding: 50px 50px;
+	}
+}
+
+
+/* danh cho mobile */
+@media only screen and (max-width: 740px ){
+	#corner-logo{
+		width: 120px;
+		margin-bottom: 30px;
+		margin-left: 30px;
+	}
+
+	.forgot-password-container{
+		min-width: 330px;
+		background-color: #F1F2F5;
+		border-radius: 15px;
+		padding: 25px 30px;
+	}
+
+	.forgot-password-heading{
+		margin-bottom: 40px;
+		font-weight: 600;
+		text-align: center;
+		font-size: 25px;
+	}
+
+	.forgot-password-user-input{
+		display: block;
+		width: 100%;
+		padding: 12px 12px;
+		border-radius: 10px;
+		border: 1px solid rgb(204, 203, 203);
+		background-color: #f5f5f5;
+		margin-bottom: 20px;
+		font-size: 14px;
+	}
+
+	.forgot-password-btn{
+		display: block;
+		margin:25px auto;
+		width: 100%;
+		padding: 15px 20px;
+		text-align: center;
+		border-radius: 10px;
+		border: none;
+		background-color: #512da8;
+		color: white;
+		font-size: 16px;
+		cursor: pointer;
+	}
+
+	.term-forgot-password-accept{
+		font-size: 12px;
+		display: inline-block;
+		margin-left: 3px;
+	}
+
+	.term-forgot-password-accept a{
+		text-decoration: none;
+	}
+
+	.term-forgot-password-accept a:active{
+		color: black ;
+	}
+}

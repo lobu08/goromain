@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charset = "UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title id="tab-title"> GORO</title>
+<link rel="stylesheet" href="css/homescreen.css">
+<link rel="stylesheet" href="fontawesome-free-6.4.2-web/css/all.min.css">
+<link rel="icon" type="small icon" href="Title logo final.png">
+</head>
+<body id="mainbody">
+    <!-- HEADER _ NAVIGATION BAR start -->
+    <div class="header">
+        <div class="nav-bar">
+            <a href="#"><img src="Logopng.png" class="corner-logo"></a>
+            <div class="search-bar">
+                <input type="text" placeholder="Nhập sản phẩm bạn muốn tìm kiếm"><a href="#"><i class="fa-solid fa-magnifying-glass search-bar-icon"></i></a>
+            </div>
+            <div class="header-icon-btn">
+                <a href="#"><i class="fa-solid fa-house"></i></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <li id="user-btn"><a href="#" onclick="DisplayUserOption()"><i class="fa-solid fa-user" id="fa-user"></i></a>
+                    <ul class="user-menu-container" id="user-menu-container">
+                        <li class="user-heading-container">
+                            <h2 class="user-menu-heading"><i class="fa-regular fa-user"></i>Tài khoản</h2>
+                            <a href="#"  onclick="HideUserOption()"><i class="fa-solid fa-xmark"></i></a>
+                        </li>
+                        <li class="user-option"><a href="#">Thông tin tài khoản</a></li>
+                        <li class="user-option"><a href="#">Địa chỉ</a></li>
+                        <li class="user-option"><a href="#">Tracking</a></li>
+                        <li class="user-option"><a href="#">Lịch sử mua hàng</a></li>
+                        <li class="user-option"><a href="#">Phương pháp thanh toán</a></li>
+                        <li class="user-option language-option-container"  onclick="DisplayLanguageOption ()">
+                            <a href="#">Ngôn ngữ</a>
+                            <span id="arrow-icon">&#9660</span>
+                            <ul class="language" id="language">
+                                <li class="language-option"><a href="#">Tiếng Việt</a></li>
+                                <li class="language-option"><a href="#">English</a></li>
+                                <li class="language-option"><a href="#">日本語</a></li>
+                            </ul>
+                        </li>
+                        <li class="user-option"><a href="#">Hỗ trợ</a></li>
+                        <li class="user-option log-out-btn"><a href="loginscreen.html"><i class="fa-solid fa-right-from-bracket user-option-icon"></i>Đăng xuất</a></li>
+                    </ul>
+
+                </li>
+            </div>
+        </div>
+        <div class="head-address-bar">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Địa chỉ giao hàng hiện tại của bạn:<span>Saitama, koshigaya, Akanecho, 2-2-2 708</span></p>
+            <a href="#"><i class="fa-solid fa-sliders change-address-btn"></i></a>
+        </div>
+    </div>
+    <!-- HEADER _ NAVIGATION BAR end -->
+
+
+    <!-- MAIN BODY start -->
+    <div class="content">
+    </div>
+
+
+
+    <div class="footer"></div>
+
+    <script src="js/homescreen.js"></script>
+</body>
+</html>

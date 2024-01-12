@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+
+}
+
+body{
+    /* padding: 0 50px; */
+    min-width: 900px;
+    height: 100svh;
+    min-height: 700px;
+    background-color: rgb(250, 240, 215);
+}
+
+
+/* PHAN HEADER --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.header{
+    width: 100%;
+    padding: 0
+}
+
+.header .nav-bar{
+    display: flex;
+    background-color:#131c30;
+    align-items: center;
+    padding: 40px 0px;
+    /* position: relative; */
+    width: 100%;
+}
+
+
+.corner-logo{
+    width: 110px;
+    position: absolute;
+    left: 30px;
+    top: 20px;
+}
+
+.search-bar{
+    position: absolute;
+    left: 23%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    gap:0;
+}
+
+
+.search-bar input{
+    padding: 12px 20px;
+    width: 100%;
+    border: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 14px;
+}
+
+
+.search-bar-icon{
+    color:black;
+    font-size: 20px;
+    padding: 11px;
+    border-radius: 0 8px 8px 0;
+    background-color:#ffb701;
+    border: none;
+}
+
+
+.header-icon-btn{
+    position: absolute;
+    right: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    user-select: none;
+	-webkit-user-select: none;
+}
+
+.header-icon-btn li{
+    list-style: none;
+    cursor: pointer;
+}
+
+
+.header-icon-btn i{
+    font-size: 22px;
+    color: #ffb701;
+}
+
+.header-icon-btn i:hover{
+    font-size: 22px;
+    color: #996e00;
+}
+
+
+
+
+@keyframes MoveInScale{
+    0%{
+        transform: scale(60%);
+        opacity: 20%;
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes MoveOutScale{
+    0%{
+        transform: scale(1);
+    }
+
+    100%{
+        transform: scale(50%);
+        opacity: 40%;
+    }
+}
+
+
+
+
+@keyframes MoveInRight{
+    0%{
+        transform: translateX(300px);
+    }
+
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes MoveOutRight{
+    0%{
+        transform: translateX(0);
+    }
+    
+    100%{
+        transform: translateX(600px);
+    }
+}
+
+.header-icon-btn .user-menu-container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 320px;
+    top: 45px;
+    right:-30px;
+    z-index: 3;
+    background-color:white;
+    border: 1px solid rgba(173, 173, 173, 0.747);
+    border-radius: 10px;
+    animation: MoveInScale 0.4s;
+    display: none;
+}
+
+.header-icon-btn .user-menu-container .user-heading-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-icon-btn .user-menu-container .user-menu-heading{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 20px;
+}
+
+.header-icon-btn .user-menu-container .user-menu-heading .fa-user{
+    margin-right: 10px;
+    color: #131c30;
+}
+
+
+
+
+.header-icon-btn .user-menu-container .user-heading-container a .fa-xmark{
+    color: black;
+    margin-right: 20px;
+    font-size: 25px;
+    user-select: none;
+	-webkit-user-select: none;
+}
+
+.header-icon-btn .user-menu-container .user-heading-container a .fa-xmark:hover{
+    color: rgb(124, 124, 124);
+}
+
+
+
+
+
+
+.header-icon-btn .user-menu-container .user-option{
+    padding: 15px 20px;
+    border-bottom: 1px solid rgb(216, 216, 216);
+    font-family: Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.header-icon-btn .user-menu-container .user-option:hover{
+    background-color: rgb(244, 244, 244);
+}
+
+.header-icon-btn .user-menu-container .user-option:hover:last-child{
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+.header-icon-btn .user-menu-container .user-option a{
+    color: black;
+    user-select: none;
+	-webkit-user-select: none;
+}
+
+.header-icon-btn .user-menu-container .user-option .language{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    display: none;
+    margin-top: 20px;
+    animation: MoveInScale 0.5s;
+}
+
+#arrow-icon{
+    margin-left: 5px;
+    font-size: 8px;
+}
+
+.header-icon-btn .user-menu-container .user-option .language li{
+    padding: 10px 0;
+}
+
+.header-icon-btn .user-menu-container .user-option:last-child{
+    margin-bottom: 0;
+    margin-top: 50px;
+    border-bottom: none;
+}
+
+
+.header-icon-btn .user-menu-container .log-out-btn  {
+    text-align: center;
+    user-select: none;
+	-webkit-user-select: none;
+}
+
+.header-icon-btn .user-menu-container li .fa-right-from-bracket{
+    color: #131c30;
+    font-size: 17px;
+    margin-right: 10px;
+}
+
+
+
+
+.header-icon-btn .user-menu-container li{
+    list-style: none;
+}
+
+.header-icon-btn .user-menu-container li a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+.header .head-address-bar{
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #ffb701;
+    display: flex;
+    position: relative;
+    align-items: center;
+    box-shadow: 2px 2px 7px rgb(0,0,0,.5);
+    font-family: Helvetica, sans-serif;
+}
+
+
+
+.header .head-address-bar .fa-location-dot{
+    color: black;
+    margin-right: 10px;
+    margin-left: 20px;
+    font-size: 23px;
+}
+
+.header .head-address-bar .change-address-btn{
+    color: black;
+    position: absolute;
+    top: 15px;
+    right:35px;
+    margin-left: 10px ;
+    font-size: 20px;
+}
+
+
+
+
+/*  ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo RESPONSIVE ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
+
+/* danh cho tablet va PC */
+@media only screen and (min-width: 740px) and (max-width: 1024px){
+    body{
+        background-color: rgb(236, 236, 215);
+        min-width: 740px;
+        height: 100svh;
+        min-height: 700px;
+    }
+
+    .corner-logo{
+        width: 100px;
+        position: absolute;
+        left: 40px;
+        top: 25px;
+    }
+    
+    .search-bar{
+        position: absolute;
+        left: 21%;
+        width: 50%;
+        display: flex;
+        align-items: center;
+        gap:0;
+    }
+
+    .search-bar input{
+        padding: 10px 20px;
+        width: 100%;
+        border: none;
+        border-radius: 8px 0 0 8px;
+        font-size: 14px;
+    }
+
+    .search-bar-icon{
+        color:black;
+        font-size: 20px;
+        padding: 9px;
+        border-radius: 0 8px 8px 0;
+        background-color:#ffb701;
+        border: none;
+    }
+    
+    
+    .header-icon-btn{
+        position: absolute;
+        right: 40px;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        user-select: none;
+        -webkit-user-select: none;
+}
+}
+
+
+/* danh cho mobile */
+@media screen and (max-width: 740px ){
+    body{
+        background-color: rgb(236, 236, 215);
+        min-width: 320px;
+        height: 100svh;
+        min-height: 700px;
+    }
+
+    .corner-logo{
+        width: 100px;
+        position: absolute;
+        left: 25px;
+        top: 15px;
+        order: 1;
+    }
+
+    .search-bar{
+        position: absolute;
+        left: 6%;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        gap:0;
+        order:3;
+        bottom: 15px;
+    }
+
+    .search-bar input{
+        padding: 12px 20px;
+        width: 100%;
+        border: none;
+        border-radius: 8px 0 0 8px;
+        font-size: 15px;
+    }
+
+    .search-bar-icon{
+        color:black;
+        font-size: 19px;
+        padding: 12px;
+        border-radius: 0 8px 8px 0;
+        background-color:#ffb701;
+        border: none;
+    }
+
+    .header .nav-bar{
+        display: flex;
+        background-color:#131c30;
+        align-items:center;
+        padding: 60px 0px;
+        position: relative;
+        width: 100%;
+        /* flex-wrap: wrap; */
+    }
+
+    .header-icon-btn{
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        user-select: none;
+        -webkit-user-select: none;
+        order: 2;
+    }
+
+
+    .header-icon-btn .user-menu-container{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100vw;
+        top: 100px;
+        right: -25px;
+        z-index: 3;
+        background-color:white;
+        border:none;
+        border-radius: 0px;
+        animation: MoveInRight 0.4s;
+        box-shadow: 2px 2px 7px rgb(0,0,0,.5);
+        display: none;
+    }
+
+    .header .head-address-bar{
+        width: 100%;
+        padding: 15px 20px;
+        background-color: #ffb701;
+        display: flex;
+        position: relative;
+        align-items: center;
+        box-shadow: 2px 2px 7px rgb(0,0,0,.5);
+        font-family: Helvetica, sans-serif;
+        font-size: 14px;
+    }
+    
+    .header .head-address-bar .fa-location-dot{
+        color: black;
+        margin-right: 10px;
+        margin-left: 5px;
+        font-size: 20px;
+    }
+    
+    .header .head-address-bar .change-address-btn{
+        color: black;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 20px;
+    }
+}
+
+
