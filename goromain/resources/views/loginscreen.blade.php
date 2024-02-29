@@ -13,15 +13,36 @@
 <body>
     <div class="upper-container">
         <div class="logo-and-pic">
-            <a href="{{ url('/homescreen') }}" id="corner-img-link"><img src="{{ asset('Logopng.png') }}" alt="cornerlogo" id="corner-logo" width="120"></a>
+            <a href="{{ url('/homescreen') }}" id="corner-img-link"><img src="{{ asset('/img/Logo_main.png') }}" alt="cornerlogo" id="corner-logo" width="120"></a>
             <p class="logo-text" id="logo-text">Bấm vào logo để xem thêm về chúng tôi</p>
-            <img src="{{ asset('bag3.png') }}" alt="demo-pic" id="left-img" width="120">
+            <img src="{{ asset('/img/bag.png') }}" alt="demo-pic" id="left-img" width="120">
         </div>
 
         <div class="signin-container">
             <form action="{{ route('login') }}" method="post">
                 @csrf
+                <div class="error-caution" id="error-caution">
+					<p>{{session('error')}}</p>
+				</div>
                 <h1 class="signin-heading" id="signin-heading">Đăng nhập</h1>
+                <style>
+					.signin-container form .error-caution{
+						padding: 14px 20px;
+						background-color: #ea443530;
+						margin: 15px 0;
+						border-radius: 7px;
+						display: none;
+						width: 100%;
+						text-align: center;
+					}
+					.signin-container form .error-caution p{
+						font-size: 12px;
+						color: rgba(255, 0, 0, 0.421);
+						font-weight: 600;
+						font-family: Arial, Helvetica, sans-serif;
+					}
+
+				</style>
                 <label for="account" class="signin-label" id="signin-label">Tài Khoản</label>
                 <input type="text" id="user-account" name="email" class="signin-input account-input" placeholder="goro@gmail.com">
                 <label for="account" class="signin-label" id="password-label">Mật Khẩu</label>
@@ -37,7 +58,7 @@
                     <a href="#" class="signin-social-icon-link"><i class="fa-brands fa-apple signin-social-icon"><span> Apple </span></i></a>
                 </div>
                 <div class="signup"><span id="sign-up">Bạn chưa có tài khoản ?</span><a href="{{ route('register') }}" target="_blank" class="signup-link" id="signup-link"> Đăng kí</a></div>
-                <div class="forgot-password"><a href="" id="forgot-password" target="_blank">Quên mật khẩu ?</a></div>
+                <div class="forgot-password"><a href="/forgotpassword" id="forgot-password" target="_blank">Quên mật khẩu ?</a></div>
             </form>
         </div>
     </div>

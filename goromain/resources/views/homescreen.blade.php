@@ -40,7 +40,15 @@
                             </ul>
                         </li>
                         <li class="user-option"><a href="#">Hỗ trợ</a></li>
-                        <li class="user-option log-out-btn"><a href="loginscreen.html"><i class="fa-solid fa-right-from-bracket user-option-icon"></i>Đăng xuất</a></li>
+                        <li class="user-option log-out-btn">
+                            <form id ="logout-form" action="{{ route('logout')}}" method="POST" style="display:none">
+                                @csrf
+                            </form>
+                            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">
+                                <i class="fa-solid fa-right-from-bracket user-option-icon"></i>
+                                Đăng xuất
+                            </a>
+                        </li>
                     </ul>
 
                 </li>
@@ -57,11 +65,21 @@
 
     <!-- MAIN BODY start -->
     <div class="content">
+        <div class="ads-container">
+            <a href="#"><img src={{ asset('img/Goro_bread.JPG') }} id="big-ads"></a>
+            <a href="#"><img src={{ asset('img/Ads-in-E-Commerce.jpeg')}} id="small-ads" width="30vw"></a>
+        </div>
+
     </div>
 
 
 
     <div class="footer"></div>
+    @if (session('login_success'))
+    <script>
+    alert("{{ session('login_success')}}");
+    </script>
+    @endif
 
     <script src="js/homescreen.js"></script>
 </body>

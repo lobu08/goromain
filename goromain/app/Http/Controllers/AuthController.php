@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
@@ -15,16 +16,22 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
+        $validatedData = $request->validate([
+            'email'=> 'required|email|unique:users',
+            'password' => 'required|min:6',
+        ] , [
+            'email.required' => 'Vui lòng nhập email',
+            'email.email' => 'Email không hợp lệ ',
+            'email.unique' => 'Email đã được sử dụng',
+            'password.required' => 'Vui lòng nhập mật khẩu',
+            'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
         ]);
 
         // Attempt to authenticate the user
         if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
-            return response()->json(['thongbao' => 'Đăng nhập thành công'], 200);
+            return redirect('/') ->with('login_success', 'Đăng nhập thành công');
         } else {
-            return response()->json(['loi' => 'Đăng nhập thất bại'], 401);
+            return redirect()->back() ->with('error','Sai tên tài khoản hoặc mật khẩu, vui lòng đăng nhập lại');
         }
     }
 
@@ -49,7 +56,12 @@ class AuthController extends Controller
         // Save the user to the database
         $user->save();
 
-        return redirect('/login')->with('thongbao', 'Đăng ký thành công, vui lòng đăng nhập.');
+        return redirect('/')->with('thongbao', 'Đăng ký thành công, vui lòng đăng nhập.');
 
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+        return redirect('/login');
     }
 }

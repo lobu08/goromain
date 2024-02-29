@@ -26,3 +26,9 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/registeremail', function () {
     return view('signupwithmail');
 });
+Route::get('/forgotpassword', function () {
+    return view('forgotpassword');
+});
+
+Route::post('/logout', [AuthController::class, 'logout']);
+
