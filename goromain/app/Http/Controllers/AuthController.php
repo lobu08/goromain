@@ -16,15 +16,9 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $validatedData = $request->validate([
-            'email'=> 'required|email|unique:users',
-            'password' => 'required|min:6',
-        ] , [
-            'email.required' => 'Vui lòng nhập email',
-            'email.email' => 'Email không hợp lệ ',
-            'email.unique' => 'Email đã được sử dụng',
-            'password.required' => 'Vui lòng nhập mật khẩu',
-            'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
         ]);
 
         // Attempt to authenticate the user
