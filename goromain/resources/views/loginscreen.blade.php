@@ -22,7 +22,7 @@
             <form action="{{ route('login') }}" method="post">
                 @csrf
                 <div class="error-caution" id="error-caution">
-					<p>{{session('error')}}</p>
+					<p>{{session('login-error')}}</p>
 				</div>
                 <h1 class="signin-heading" id="signin-heading">Đăng nhập</h1>
                 <style>

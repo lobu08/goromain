@@ -21,7 +21,7 @@ class AuthController extends Controller
         if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
             return redirect('/') ->with('login_success', 'Đăng nhập thành công');
         } else {
-            return redirect()->back() ->with('error','Sai tên tài khoản hoặc mật khẩu, vui lòng đăng nhập lại');
+            return redirect()->back() ->with('login-error','Sai tên tài khoản hoặc mật khẩu, vui lòng đăng nhập lại');
         }
     }
 

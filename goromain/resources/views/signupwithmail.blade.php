@@ -21,26 +21,31 @@
         <div class="signup-mail-container">
             <form action="{{ route('register') }}" method="post">
                 @csrf
+                @if($errors->has('email') || $errors->has('password') || $errors->has('re-password'))
+                <div class="alert alert-danger">
+                @if($errors->has('email'))
+                {{ $errors->first('email') }}<br>
+                @endif
+                @if($errors->has('password'))
+                {{ $errors->first('password') }}<br>
+                @endif
+                @if($errors->has('re-password'))
+                {{ $errors->first('re-password') }}<br>
+                @endif
+                </div>
+                @endif
+
                 <h1 class="signup-mail-heading" id="signup-mail-heading">Đăng ký bằng Email</h1>
                 <label for="email" class="signup-mail-label" id="email-label">Địa chỉ mail</label>
                 <input type="text" id="email" name="email" class="signup-mail-input account-mail-input" placeholder="goro123@gmail.com">
-                @if($errors->has('email'))
-                <div class="alert alert-danger">{{ $errors->first('email') }}</div>
-                @endif
                 <label for="password" class="signup-mail-label" id="password-label">Mật Khẩu</label>
                 <div class="input-password-icon">
                     <input type="password" id="password" name="password" class="signup-mail-input password-input" placeholder="goro123ABC">
                 </div>
-                @if($errors->has('password'))
-                <div class="alert alert-danger">{{ $errors->first('password') }}</div>
-                @endif
                 <label for="re-password" class="signup-mail-label" id="re-password-label">Nhập lại mật khẩu</label>
                 <div class="input-password-icon">
                     <input type="password" id="re-password" name="re-password" class="signup-mail-input password-input" placeholder="goro123ABC">
                 </div>
-                @if($errors->has('re-password'))
-                <div class="alert alert-danger">{{ $errors->first('re-password') }}</div>
-                @endif
                 <div class="check-box">
                     <p class="term-accept-error" id="term-accept-error">Bạn hãy xác nhận điều khoản sử dụng</p>
                     <input type="checkbox" name="terms" id="terms">
