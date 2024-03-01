@@ -13,9 +13,9 @@
 <body>
 	<div class="upper-container">
 		<div class="logo-and-pic">
-			<a href="#" id="corner-img-link"><img src="Logopng.png" alt="cornerlogo" id="corner-logo" width="120"></a>
+			<a href="#" id="corner-img-link"><img src="{{asset('img/Logo_main.png')}}" alt="cornerlogo" id="corner-logo" width="120"></a>
 			<p class="logo-text" id="logo-text">Bấm vào logo để xem thêm về chúng tôi</p>
-			<img src="welcome-back.png" alt="demo-pic" id="left-img" width="120">
+			<img src="{{asset('img/welcome-back.png')}}" alt="demo-pic" id="left-img" width="120">
 		</div>
 
 		<div class="signup-container">
@@ -30,7 +30,7 @@
                 <div class="thin-line"><span id="thin-line"></span></div>
 
                 <p class="have-account" id="have-account">Bạn đã có tài khoản ?</p>
-                <button class="signup-login-btn" id="signup-login-btn">Đăng Nhập</button>
+                <button class="signup-login-btn" id="signup-login-btn"><a style="color: white" href="{{route('login')}}">Đăng Nhập</a></button>
             </form>
 		</div>
 	</div>

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MainRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -16,11 +17,6 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
         // Attempt to authenticate the user
         if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
             return redirect('/') ->with('login_success', 'Đăng nhập thành công');
@@ -34,23 +30,15 @@ class AuthController extends Controller
         return view('signupscreen');
     }
 
-    public function register(Request $request)
+    public function register(MainRequest $request)
     {
-        $request->validate([
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-        ]);
-
-        // Create a new user
         $user = new User([
             'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password')),
+            'password' => Hash::make($request->input('password')),
         ]);
-
-        // Save the user to the database
         $user->save();
 
-        return redirect('/')->with('thongbao', 'Đăng ký thành công, vui lòng đăng nhập.');
+        return redirect('/login')->with('register-success', 'Đăng ký thành công, vui lòng đăng nhập.');
 
     }
 

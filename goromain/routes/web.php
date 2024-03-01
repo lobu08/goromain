@@ -30,5 +30,5 @@ Route::get('/forgotpassword', function () {
     return view('forgotpassword');
 });
 
-Route::post('/logout', [AuthController::class, 'logout']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 

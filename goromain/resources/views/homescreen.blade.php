@@ -12,7 +12,7 @@
     <!-- HEADER _ NAVIGATION BAR start -->
     <div class="header">
         <div class="nav-bar">
-            <a href="#"><img src="Logopng.png" class="corner-logo"></a>
+            <a href="#"><img src="{{asset('/img/Logo_main.png')}}" class="corner-logo"></a>
             <div class="search-bar">
                 <input type="text" placeholder="Nhập sản phẩm bạn muốn tìm kiếm"><a href="#"><i class="fa-solid fa-magnifying-glass search-bar-icon"></i></a>
             </div>
@@ -41,7 +41,7 @@
                         </li>
                         <li class="user-option"><a href="#">Hỗ trợ</a></li>
                         <li class="user-option log-out-btn">
-                            <form id ="logout-form" action="{{ route('logout')}}" method="POST" style="display:none">
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display:none">
                                 @csrf
                             </form>
                             <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit()">

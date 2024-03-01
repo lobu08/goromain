@@ -72,6 +72,12 @@
         <div class="footer-long-line"></div>
         <p>&copy GORO Cooporate. | Designed by GORO Team | All rights reserved</p>
     </div>
+    @if (session('register-success'))
+    <script>
+        alert("{{ session('register-success') }}");
+    </script>
+    @endif
+
     <script src="{{ asset('js/signin.js') }}"></script>
 </body>
 
