@@ -21,17 +21,14 @@
         <div class="signin-container">
             <form action="{{ route('login') }}" method="post">
                 @csrf
-                <div class="error-caution" id="error-caution">
-					<p>{{session('login-error')}}</p>
-				</div>
-                <h1 class="signin-heading" id="signin-heading">Đăng nhập</h1>
+                @if (session('login-error'))
                 <style>
 					.signin-container form .error-caution{
 						padding: 14px 20px;
 						background-color: #ea443530;
 						margin: 15px 0;
 						border-radius: 7px;
-						display: none;
+						display: block;
 						width: 100%;
 						text-align: center;
 					}
@@ -41,8 +38,13 @@
 						font-weight: 600;
 						font-family: Arial, Helvetica, sans-serif;
 					}
+                </style>
+                    <div class="error-caution" id="error-caution">
+                        <p>{{session('login-error')}}</p>
+				    </div>
+                @endif
 
-				</style>
+                <h1 class="signin-heading" id="signin-heading">Đăng nhập</h1>
                 <label for="account" class="signin-label" id="signin-label">Tài Khoản</label>
                 <input type="text" id="user-account" name="email" class="signin-input account-input" placeholder="goro@gmail.com">
                 <label for="account" class="signin-label" id="password-label">Mật Khẩu</label>

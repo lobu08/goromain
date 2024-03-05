@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,6 @@ Route::get('/forgotpassword', function () {
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+Route::post('/send-mail', [MailController::class, 'sendMail'])->name('send-mail');
+
 

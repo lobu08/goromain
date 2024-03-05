@@ -15,7 +15,7 @@ class MainRequest extends FormRequest
     {
         return [
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:6',
         ];
     }
 
@@ -26,7 +26,6 @@ class MainRequest extends FormRequest
             'email.unique' => 'Email đã tồn tại',
             'password.required' => 'Hãy nhập mật khẩu',
             'password.min' => 'Mật khẩu phải có ít nhất 6 ký tự',
-            'password.confirmed' => 'Mật khẩu xác nhận không khớp',
         ];
     }
 }
