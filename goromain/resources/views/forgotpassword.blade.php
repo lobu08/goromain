@@ -19,6 +19,28 @@
         <div class="forgot-password-container">
             <form action="{{route('send-mail')}}" method="post">
                 @csrf
+                @if (session('reset-error'))
+                <style>
+					.signin-container form .error-caution{
+						padding: 14px 20px;
+						background-color: #ea443530;
+						margin: 15px 0;
+						border-radius: 7px;
+						display: block;
+						width: 100%;
+						text-align: center;
+					}
+					.signin-container form .error-caution p{
+						font-size: 12px;
+						color: rgba(255, 0, 0, 0.421);
+						font-weight: 600;
+						font-family: Arial, Helvetica, sans-serif;
+					}
+                </style>
+                    <div class="error-caution" id="error-caution">
+                        <p>{{session('reset-error')}}</p>
+				    </div>
+                @endif
                 <h1 class="forgot-password-heading" id="forgot-password-heading">Đặt lại mật khẩu</h1>
                 <label for="email" class="forgot-password-label" id="forgot-password-mail-label">Địa chỉ mail</label>
                 <input type="text" id="email" name="email" class="forgot-password-input forgot-password-user-input" placeholder="goro123@gmail.com">

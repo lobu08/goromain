@@ -11,16 +11,18 @@
 <body>
 	<div class="confirm-number-upper-container">
 		<div class="logo-and-pic">
-			<a href="#" id="corner-img-link"><img src="images/Logo_main.png" alt="cornerlogo" id="corner-logo" width="120"></a>
+			<a href="#" id="corner-img-link"><img src="{{asset('img/Logo_main.png')}}" alt="cornerlogo" id="corner-logo" width="120"></a>
 		</div>
 
 		<div class="confirm-number-container">
-			<form>
-                <p class="confirm-number-text"> Hãy nhập mã mà chúng tôi đã gửi đến địa chỉ mail của bạn vào ô dưới đây</p>
-                <input type="text" id="confirm-number" name="confirm-number" class="confirm-number-input">
-				<button class="confirm-number-btn" id="confirm-number-btn">Xác Nhận</button>
-				<p id="re-send-text">Không nhận được mã ?<span id="re-send-option"><a href="#"> Gửi lại</a></span></p>
-    		</form>
+			<form action="{{ route('verifyToken') }}" method="POST">
+                @csrf
+                <p class="confirm-number-text">Hãy nhập mã mà chúng tôi đã gửi đến địa chỉ mail của bạn vào ô dưới đây</p>
+                <input type="text" id="confirm-number" name="token" class="confirm-number-input" required>
+                <button type="submit" class="confirm-number-btn">Xác Nhận</button>
+                <p id="re-send-text">Không nhận được mã ?<span id="re-send-option"><a href="#">Gửi lại</a></span></p>
+            </form>
+
 		</div>
 	</div>
 

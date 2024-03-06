@@ -14,28 +14,30 @@ class ConfirmationMail extends Mailable
     use Queueable, SerializesModels;
     public $mailData;
     public $mailKind;
+    public $token;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($mailData, $mailKind)
+    public function __construct($mailData, $mailKind,$token)
     {
        $this->mailData = $mailData;
        $this->mailKind = $mailKind;
+       $this->token = $token;
     }
-
     /**
      * Get the message envelope.
      */
     public function envelope(): Envelope
     {
+
         $subject = '';
         switch ($this->mailKind){
             case 'register':
-                $subject = '[Mail DANG KY]';
+                $subject = '[GORO - DANG KY THANH CONG]';
                 break;
             case 'resetpassword':
-                $subject = '[MAIL THAY DOI MAT KHAU]';
+                $subject = '[GORO - THAY DOI MAT KHAU]';
                 break;
         }
         return new Envelope(
@@ -54,14 +56,13 @@ class ConfirmationMail extends Mailable
                 $view = 'mail.register';
                 break;
             case 'resetpassword':
-                $view ='mail.resetpassword';
+                $view ='mailresetpassword';
                 break;
         }
         return new Content(
             view: $view,
         );
     }
-
     /**
      * Get the attachments for the message.
      *

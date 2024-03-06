@@ -34,4 +34,7 @@ Route::get('/forgotpassword', function () {
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::post('/send-mail', [MailController::class, 'sendMail'])->name('send-mail');
 
+Route::get('/confirmnumber',[MailController::class, 'confirmnumber'])->name('confirmnumber');
+Route::post('verifyToken',[MailController::class,'verifyToken'])->name('verifyToken');
+
 
