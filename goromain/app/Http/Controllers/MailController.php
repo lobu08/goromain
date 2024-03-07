@@ -14,50 +14,66 @@ class MailController extends Controller
 {
     public function sendMail(Request $request)
     {
-        // Lấy email từ yêu cầu POST
-        $updateEmail = $request->input('email');
-        Cache::forget('password_reset_' . $updateEmail);
+        // Kiểm tra xem request có chứa email không
+        if ($request->has('email')) {
+            // Lấy email từ yêu cầu POST
+            $updateEmail = $request->input('email');
 
-        // Tìm người dùng với email được cung cấp
-        $user = User::where('email', $updateEmail)->first();
+            // Tìm người dùng với email được cung cấp
+            $user = User::where('email', $updateEmail)->first();
 
-        // Kiểm tra nếu không tìm thấy người dùng
-        if ($user) {
-            $token = Str::random(6);
-            Cache::put('password_reset' . $updateEmail, $token, 6); // Sửa thành 'password_reset_' . $request->email
-            // Khởi tạo dữ liệu email
-            $changedFields = [];
-            $mailData = [
-                'username' => $user->email, // Thay đổi từ $user->email thành $user->username nếu muốn gửi username thay vì email
-                'changedField' => $changedFields,
-                'token' => $token,
-            ];
+            // Kiểm tra nếu không tìm thấy người dùng
+            if ($user) {
+                $token = Str::random(6);
+                Cache::put('password_reset_', $token, 60);
 
-            // Loại email
-            $mailKind = 'resetpassword';
+                // Khởi tạo dữ liệu email
+                $changedFields = [];
+                $mailData = [
+                    'username' => $user->email,
+                    'changedField' => $changedFields,
+                    'token' => $token,
+                ];
 
-            // Gửi email
-            Mail::to($updateEmail)->send(new ConfirmationMail($mailData, $mailKind,$token));
+                // Loại email
+                $mailKind = 'resetpassword';
 
-            // Phản hồi về thành công
-            return redirect()->route('confirmnumber');
-        }
-        else{
-            return redirect()->back() ->with('reset-error','Email chua duoc dang ky, vui long thu lai');
+                // Gửi email
+                Mail::to($updateEmail)->send(new ConfirmationMail($mailData, $mailKind, $token));
+
+                // Phản hồi về thành công
+                return redirect()->route('confirmnumber');
+            } else {
+                return redirect()->back()->with('reset-error', 'Email chưa được đăng ký, vui lòng thử lại.');
+            }
+        } else {
+            // Xử lý trường hợp request không chứa email
+            return redirect()->back()->with('reset-error', 'Email không hợp lệ, vui lòng thử lại.');
         }
     }
 
-    public function confirmnumber(Request $request){
-        return view('confirmnumber');
-    }
+    public function verifyToken(Request $request)
+    {
+    // Kiểm tra xem request có chứa token không
+        if ($request->has('token')) {
+        $token = $request->input('token');
+        $cachedToken = Cache::get('password_reset_'); // Đảm bảo key được tạo đúng cách ở đây
 
-    public function verifyToken(Request $request){
-        $updateEmail = $request->input('email');
-        $token = Cache::get('password_reset' . $updateEmail );
-        if ($token && $token === $request->token) {
+        if ($cachedToken && $cachedToken === $token) {
             return view('newpassword');
-        } else{
-        return back()->withInput()->withErrors(['token' => 'Invalid token']);
+        } else {
+            return redirect()-> back()->with('token', 'Mã token không hợp lệ');
         }
+        } else {
+        // Xử lý trường hợp request không chứa token
+        return redirect()->back()->with('reset-error', 'Dữ liệu không hợp lệ, vui lòng thử lại.');
+        }
+    }
+
+
+
+    public function confirmnumber(Request $request)
+    {
+        return view('confirmnumber');
     }
 }

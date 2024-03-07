@@ -17,16 +17,23 @@
 		<div class="confirm-number-container">
 			<form action="{{ route('verifyToken') }}" method="POST">
                 @csrf
+                @if (session('token'))
+                    <div>
+                        <p>{{session('token')}}</p>
+				    </div>
+                @endif
+                @if (session('reset-error'))
+                    <div>
+                        <p>{{session('reset-error')}}</p>
+				    </div>
+                @endif
                 <p class="confirm-number-text">Hãy nhập mã mà chúng tôi đã gửi đến địa chỉ mail của bạn vào ô dưới đây</p>
                 <input type="text" id="confirm-number" name="token" class="confirm-number-input" required>
                 <button type="submit" class="confirm-number-btn">Xác Nhận</button>
                 <p id="re-send-text">Không nhận được mã ?<span id="re-send-option"><a href="#">Gửi lại</a></span></p>
             </form>
-
 		</div>
 	</div>
-
-
 	<div class="footer">
 		<div class="footer-option-container">
 			<a href="#" class="footer-option" onclick="VietnameseChange()">Vietnamese</a>
