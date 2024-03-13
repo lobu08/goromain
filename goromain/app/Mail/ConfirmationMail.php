@@ -14,16 +14,14 @@ class ConfirmationMail extends Mailable
     use Queueable, SerializesModels;
     public $mailData;
     public $mailKind;
-    public $token;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($mailData, $mailKind,$token)
+    public function __construct($mailData, $mailKind)
     {
        $this->mailData = $mailData;
        $this->mailKind = $mailKind;
-       $this->token = $token;
     }
     /**
      * Get the message envelope.
@@ -53,7 +51,7 @@ class ConfirmationMail extends Mailable
         $view = '';
         switch ($this->mailKind){
             case 'register':
-                $view = 'mail.register';
+                $view = 'mailregister';
                 break;
             case 'resetpassword':
                 $view ='mailresetpassword';

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title id="tab-title">GORO | Đặt lại mật khẩu</title>
+    <title id="tab-title">GORO | Đăng Ký</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="{{ asset('css/loginscreen.css') }}">
     <link rel="stylesheet" href="{{ asset('fontawesome-free-6.4.2-web/css/all.min.css') }}">
@@ -17,9 +17,9 @@
         </div>
 
         <div class="forgot-password-container">
-            <form action="{{route('resetpw_sendMail')}}" method="post">
+            <form action="{{route('register_sendMail')}}" method="post">
                 @csrf
-                @if (session('reset-error'))
+                @if (session('register-error'))
                 <style>
 					.signin-container form .error-caution{
 						padding: 14px 20px;
@@ -38,10 +38,10 @@
 					}
                 </style>
                     <div class="error-caution" id="error-caution">
-                        <p>{{session('reset-error')}}</p>
+                        <p>{{session('register-error')}}</p>
 				    </div>
                 @endif
-                <h1 class="forgot-password-heading" id="forgot-password-heading">Đặt lại mật khẩu</h1>
+                <h1 class="forgot-password-heading" id="forgot-password-heading">Đăng ký</h1>
                 <label for="email" class="forgot-password-label" id="forgot-password-mail-label">Địa chỉ mail</label>
                 <input type="text" id="email" name="email" class="forgot-password-input forgot-password-user-input" placeholder="goro123@gmail.com">
                 <div class="check-box">

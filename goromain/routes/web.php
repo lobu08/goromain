@@ -25,14 +25,15 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/registeremail', function () {
-    return view('signupwithmail');
+    return view('register-request');
 });
 Route::get('/forgotpassword', function () {
     return view('forgotpassword');
 });
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::post('/send-mail', [MailController::class, 'sendMail'])->name('send-mail');
+Route::post('/resetpw_sendMail', [MailController::class, 'resetpw_sendMail'])->name('resetpw_sendMail');
+Route::post('/register_sendMail', [MailController::class, 'register_sendMail'])->name('register_sendMail');
 
 Route::get('/confirmnumber',[MailController::class, 'confirmnumber'])->name('confirmnumber');
 Route::post('verifyToken',[MailController::class,'verifyToken'])->name('verifyToken');
