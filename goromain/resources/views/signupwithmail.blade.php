@@ -13,9 +13,9 @@
 <body>
     <div class="upper-container">
         <div class="logo-and-pic">
-            <a href="#" id="corner-img-link"><img src="{{ asset('Logopng.png') }}" alt="cornerlogo" id="corner-logo" width="120"></a>
+            <a href="#" id="corner-img-link"><img src="{{ asset('img/Logo_main.png') }}" alt="cornerlogo" id="corner-logo" width="120"></a>
             <p class="logo-text" id="logo-text">Bấm vào logo để xem thêm về chúng tôi</p>
-            <img src="{{ asset('email 2.png') }}" alt="demo-pic" id="left-img" width="120">
+            <img src="{{ asset('img/email.png') }}" alt="demo-pic" id="left-img" width="120">
         </div>
 
         <div class="signup-mail-container">

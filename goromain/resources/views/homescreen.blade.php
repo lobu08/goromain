@@ -63,15 +63,41 @@
     <!-- HEADER _ NAVIGATION BAR end -->
 
 
-    <!-- MAIN BODY start -->
     <div class="content">
-        <div class="ads-container">
-            <a href="#"><img src={{ asset('img/Goro_bread.JPG') }} id="big-ads"></a>
-            <a href="#"><img src={{ asset('img/Ads-in-E-Commerce.jpeg')}} id="small-ads" width="30vw"></a>
+        <!-- ADVERTISEMENT PART -->
+        <div class="slider">
+            <!-- image list -->
+            <div class="list">
+                <div class="item">
+                    <img src="{{asset('img/goro-bread.JPG')}}">
+                </div>
+                <div class="item">
+                    <img src="{{asset('img/Ads-in-E-Commerce.jpeg')}}">
+                </div>
+                <div class="item">
+                    <img src="{{asset('img/e-commerce-.jpg')}}">
+                </div>
+                <div class="item">
+                    <img src="{{asset('img/What-is-eCommerce-advertising.jpeg')}}">
+                </div>
+            </div>
+
+            <!-- btn next and prev -->
+            <div class="buttons">
+                <button id="prev"><i class="fa-solid fa-arrow-left"></i></button>
+                <button id="next"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <!-- dots page number ( 5 item -> tuong ung voi 5 dots) -->
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </div>
 
-    </div>
 
+    </div>
 
 
     <div class="footer"></div>
@@ -81,6 +107,6 @@
     </script>
     @endif
 
-    <script src="js/homescreen.js"></script>
+    <script src="{{asset('js/homescreen.js')}}"></script>
 </body>
 </html>

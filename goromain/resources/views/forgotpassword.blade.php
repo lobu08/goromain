@@ -17,7 +17,7 @@
         </div>
 
         <div class="forgot-password-container">
-            <form action="{{route('resetpw_sendMail')}}" method="post">
+            <form action="{{route(' ')}}" method="post">
                 @csrf
                 @if (session('reset-error'))
                 <style>
@@ -63,6 +63,6 @@
         <div class="footer-long-line"></div>
         <p>&copy GORO Cooporate. | Designed by GORO Team | All rights reserved</p>
     </div>
-    <script src="js/forgotpassword.js"></script>
+    <script src="{{asset('js/forgotpassword.js')}}"></script>
 </body>
 </html>

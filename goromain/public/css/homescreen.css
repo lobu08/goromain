@@ -304,89 +304,109 @@ body{
     font-size: 20px;
 }
 
-/* PHAN ADVERTISEMENT ---------------------------------------------------------------*/
+/* PHAN CONTENT----------- */
+.content{
+    width: 100vw;
+    height: 100vh;
+    padding: 25px 40px;
+}
 
-.content .ads-container{
-    width: 100%;
-    height: 400px;
+
+
+/* Phan Content - advertisement */
+.slider{
+    width: 95svw;
+    height:35svw;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    /* scroll-snap-type: x mandatory;
+    scroll-behavior: smooth; */
+    border-radius: 10px;
+    box-shadow: 4px 5px 8px rgb(0,0,0,.3);
+}
+
+.slider::-webkit-scrollbar{
+    display: none;
+}
+
+.list{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: max-content;
+    transition: 0.9s ease-in-out;
+}
+
+.list img{
+    /* flex: 1 0 100%;
+    aspect-ratio: 16/9; */
+    width: 95svw;
+    height: 35svw;
+    object-fit:fill;
+}
+
+.buttons{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(82, 76, 76, 0.399);
+    color: #fff;
+    border:none;
+    font-weight: bold;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.buttons button:hover{
+    background-color: rgba(82, 76, 76, 0.9);
+    transition: 0.7s;
+}
+
+.buttons button:active{
+    background-color: rgba(82, 81, 81, 0.7);
+    transition: 0.1s;
+}
+
+
+
+.dots{
+    position: absolute;
+    bottom:5px;
+    color: black;
+    left:0;
+    width:100%;
+    margin:0;
+    padding:0;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    margin-top: 5px;
-    gap: 10px;
-    padding: 10px;
 }
 
-.content .ads-container #big-ads{
-    width: 100%;
+.dots li{
+    list-style: none;
+    width:10px;
+    height: 10px;
+    background-color: #000000;
+    opacity: 0.3;
+    margin:20px;
     border-radius: 20px;
-
+    transition: 0.6s;
+    cursor: pointer;
 }
 
-.content .ads-container #small-ads{
-    width: 100%;
-    border-radius: 20px;
-
-}
-
-
-
-
-
-/*  ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo RESPONSIVE ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo */
-
-/* danh cho tablet va PC */
-@media only screen and (min-width: 740px) and (max-width: 1024px){
-    body{
-        background-color: rgb(236, 236, 215);
-        min-width: 740px;
-        height: 100svh;
-        min-height: 700px;
-    }
-
-    .corner-logo{
-        width: 100px;
-        position: absolute;
-        left: 40px;
-        top: 25px;
-    }
-
-    .search-bar{
-        position: absolute;
-        left: 21%;
-        width: 50%;
-        display: flex;
-        align-items: center;
-        gap:0;
-    }
-
-    .search-bar input{
-        padding: 10px 20px;
-        width: 100%;
-        border: none;
-        border-radius: 8px 0 0 8px;
-        font-size: 14px;
-    }
-
-    .search-bar-icon{
-        color:black;
-        font-size: 20px;
-        padding: 9px;
-        border-radius: 0 8px 8px 0;
-        background-color:#ffb701;
-        border: none;
-    }
-
-
-    .header-icon-btn{
-        position: absolute;
-        right: 40px;
-        display: flex;
-        flex-direction: row;
-        gap: 40px;
-        user-select: none;
-        -webkit-user-select: none;
-}
+.dots li.active{
+    width: 40px;
 }
 
 

@@ -36,6 +36,11 @@ Route::post('/resetpw_sendMail', [MailController::class, 'resetpw_sendMail'])->n
 Route::post('/register_sendMail', [MailController::class, 'register_sendMail'])->name('register_sendMail');
 
 Route::get('/confirmnumber',[MailController::class, 'confirmnumber'])->name('confirmnumber');
-Route::post('verifyToken',[MailController::class,'verifyToken'])->name('verifyToken');
+Route::post('/request',[MailController::class,'verifyToken'])->name('request');
 
-
+Route::get('/range', function () {
+    return view('demo-range');
+});
+Route::get('/pixi', function () {
+    return view('pixi');
+});

@@ -15,7 +15,7 @@
 		</div>
 
 		<div class="confirm-number-container">
-			<form action="{{ route('verifyToken') }}" method="POST">
+			<form action="{{ route('request') }}" method="POST">
                 @csrf
                 @if (session('token'))
                     <div>
@@ -43,6 +43,6 @@
 		<div class="footer-long-line"></div>
 		<p>&copy GORO Cooporate. | Designed by GORO Team | All rights reserved</p>
 	</div>
-	<script src="js/forgotpassword.js"></script>
+	<script src="{{asset('js/forgotpassword.js')}}"></script>
 </body>
 </html>
